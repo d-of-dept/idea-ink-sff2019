@@ -1,0 +1,17 @@
+{
+  "name": "ideasink",
+  "version": "1.0.0",
+  "description": "image hosting and analytics application for IdeasInk",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "DEPT Industries",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.7.0",
+    "pug": "^2.0.4",
+    "uuid": "^3.3.3"
+  }
+}

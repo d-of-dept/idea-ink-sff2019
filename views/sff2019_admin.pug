@@ -1,0 +1,70 @@
+extends layout
+block css
+  link(rel='stylesheet' href='/css/list.css')
+block content
+  .header.clearfix
+    .container.container-1
+      h1.event-name Singapore Fintech Festival 2019
+      .container.container-2
+        #addBtn.container.container-3.clearfix
+          p.plus +
+        p.caption new item
+    #days.days
+      p#day3.day.day-1 DAY 3
+      p#day2.day.day-2 DAY 2
+      p#day1.day.day-3 DAY 1
+      #dayPill.day-selection-pill
+    .annotation.clearfix
+      h3.column-header.column-header-1 Title
+      h3.column-header.column-header-2 Type
+      h3.column-header.column-header-3 Track / Segment
+      h3.column-header.column-header-4 Start
+      h3.column-header.column-header-5 End
+      h3.column-header.column-header-6 Speaker(s)
+      h3.column-header.column-header-7 Organization(s)
+  #day1Wrapper.rows-wrapper
+    each item, i in day1
+      .row
+        .row-container
+          img.delete(src='/images/icon_delete.svg' onclick='itemDelete("'+ item.id +'")')
+          img.edit(src='/images/icon_edit.svg' onclick='itemEdit("'+ item.id +'")')
+          p#itemTitle.text-title= item.title
+          p#itemType.text-type= item.type
+          p#itemTrack.text-track= item.track
+          p#itemStart.text-start= item.st
+          p#itemEnd.text-end= item.et
+          p#itemSpeaker.text-speaker= item.speaker
+          p#itemOrg.text-org= item.organisation
+        .row-spacer
+  #day2Wrapper.rows-wrapper
+    each item, i in day2
+      .row
+        .row-container
+          img.delete(src='/images/icon_delete.svg' onclick='itemDelete("'+ item.id +'")')
+          img.edit(src='/images/icon_edit.svg' onclick='itemEdit("'+ item.id +'")')
+          p#itemTitle.text-title= item.title
+          p#itemType.text-type= item.type
+          p#itemTrack.text-track= item.track
+          p#itemStart.text-start= item.st
+          p#itemEnd.text-end= item.et
+          p#itemSpeaker.text-speaker= item.speaker
+          p#itemOrg.text-org= item.organisation
+        .row-spacer
+  #day3Wrapper.rows-wrapper
+    each item, i in day3
+      .row
+        .row-container
+          img.delete(src='/images/icon_delete.svg' onclick='itemDelete("'+ item.id +'")')
+          img.edit(src='/images/icon_edit.svg' onclick='itemEdit("'+ item.id +'")')
+          p#itemTitle.text-title= item.title
+          p#itemType.text-type= item.type
+          p#itemTrack.text-track= item.track
+          p#itemStart.text-start= item.st
+          p#itemEnd.text-end= item.et
+          p#itemSpeaker.text-speaker= item.speaker
+          p#itemOrg.text-org= item.organisation
+        .row-spacer
+    
+  
+block scripts
+  script(src='/js/sff2019_admin.js')

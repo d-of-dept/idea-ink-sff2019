@@ -1,0 +1,14 @@
+extends layout
+block css
+  link(rel='stylesheet' href='/css/login.css')
+block content
+  form#adminForm.login.login-1.clearfix
+    p.title.title-1 Sign In
+    p.title.title-2 Access the platform backend with the provided administrative account details.
+    input#userName.user(name='user' placeholder='Email' type='text')
+    input#password.password(name='password' placeholder='Password' type='password')
+    button#login.login(type='submit') Login
+  img.logo(src='/images/logo.png')
+block scripts
+  script(src='/js/admin.js')
+  

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{contentHead}
+  #loginModal.modal
+  .modal-content
+    h3 Enter Password To Continue
+    form#loginForm
+      .input-field
+        input#loginEmail(type='email' placeholder='ideasink@login.com' required='')
+      .input-field
+        input#loginPassword(type='password' placeholder='ideaink2019' required='')
+      button.login-btn Login

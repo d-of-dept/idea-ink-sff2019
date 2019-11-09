@@ -1,0 +1,394 @@
+@font-face {
+font-family: "HelveticaNowDisplay-XBd";
+src: url("../fonts/HelveticaXBold.otf") format("opentype")
+}
+
+@font-face {
+font-family: "ProximaNova-Regular";
+src: url("../fonts/ProximaNova-Regular.otf") format("opentype")
+}
+
+@font-face {
+font-family: "ProximaNova-Bold";
+src: url("../fonts/ProximaNova-Bold.otf") format("opentype")
+}
+
+@font-face {
+font-family: "ProximaNova-Semibold";
+src: url("../fonts/ProximaNova-Semibold.otf") format("opentype")
+}
+
+@font-face {
+font-family: "FuturaLT-Bold";
+src: url("../fonts/FuturaLT-Bold.ttf") format("truetype")
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  font: 400 0.938em/1.38 'ProximaNova-Regular';
+  color: rgb(0, 0, 0);
+}
+
+.hidden{
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.buttons {
+  float: left;
+  clear: both;
+  width: 360px;
+  height: 40px;
+  margin: 40px 0 0 5%;
+}
+
+.cancel {
+  display: block;
+  float: left;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #bebebe;
+  font-family: FuturaLT-Bold;
+  font-size: 0.867em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
+}
+
+.cancel:active {
+  background-color: #999999;
+  -webkit-transform: scale(.95);
+  -moz-transform: scale(.95);
+  -o-transform: scale(.95);
+  -ms-transform: scale(.95);
+  transform: scale(.95);
+}
+
+.day {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 4;
+  width: 160px;
+  height: 38px;
+  margin: 25px 0 0 20px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') white;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.editor {
+  width: 400px;
+  margin: 60px auto 0;
+}
+
+.end-hh {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 9;
+  width: 62px;
+  height: 38px;
+  margin: 17px 0 0 15px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') white;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.end-mm {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 12;
+  width: 62px;
+  height: 38px;
+  margin: 17px 0 0 5px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') white;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.day:focus,
+.end-hh:focus,
+.end-mm:focus,
+.start-hh:focus,
+.start-mm:focus,
+.track:focus {
+  border: 1px solid rgb(204, 204, 204);
+}
+
+.image {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 18;
+  width: 40px;
+  height: auto;
+  margin: auto;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.image-upload {
+  position: relative;
+  float: left;
+  z-index: 19;
+  width: 160px;
+  height: 96px;
+  margin: -39px 0 0 17px;
+  border: 2px dotted rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.image-upload:hover {
+  border-width: 2;
+  border-style: solid;
+  background-color: white;
+}
+
+.image-upload:active {
+  background-color: rgb(201, 201, 201);
+  -webkit-transform: scale(.95);
+  -moz-transform: scale(.95);
+  -o-transform: scale(.95);
+  -ms-transform: scale(.95);
+  transform: scale(.95);
+}
+
+.orgs,
+.type {
+  display: block;
+  float: left;
+  clear: both;
+  width: 400px;
+  height: 46px;
+  margin-top: 15px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: white;
+  font-family: ProximaNova-Regular;
+  font-size: 1em;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+.orgs:focus,
+.speakers:focus,
+.title:focus,
+.type:focus {
+  border: 1px solid rgb(226, 224, 224);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-title {
+  float: left;
+  font-family: HelveticaNowDisplay-XBd;
+  font-size: 2.4em;
+  font-weight: normal;
+  color: #393a3f;
+}
+
+.save {
+  display: block;
+  float: left;
+  width: 150px;
+  height: 40px;
+  margin-left: 60px;
+  border-radius: 50px;
+  background-color: #ffc800;
+  font-family: FuturaLT-Bold;
+  font-size: 0.867em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
+}
+
+.cancel:hover,
+.save:hover {
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.15);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.save:active {
+  background-color: rgb(241, 183, 8);
+  -webkit-transform: scale(.95);
+  -moz-transform: scale(.95);
+  -o-transform: scale(.95);
+  -ms-transform: scale(.95);
+  transform: scale(.95);
+}
+
+.speakers {
+  display: block;
+  float: left;
+  clear: both;
+  width: 400px;
+  height: 46px;
+  margin-top: 37px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: white;
+  font-family: ProximaNova-Regular;
+  font-size: 1em;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+.start-hh {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 5;
+  width: 62px;
+  height: 38px;
+  margin: 35px 0 0 15px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') white;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.start-mm {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 8;
+  width: 62px;
+  height: 38px;
+  margin: 35px 0 0 5px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') white;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.text-editor {
+  position: relative;
+  float: left;
+  font-size: 1.067em;
+  color: rgb(0, 0, 0);
+}
+
+.title {
+  display: block;
+  float: left;
+  clear: both;
+  width: 400px;
+  height: 46px;
+  margin-top: 50px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: white;
+  font-family: ProximaNova-Regular;
+  font-size: 1em;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+.track {
+  display: block;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 3;
+  width: 220px;
+  height: 38px;
+  margin-top: 25px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') white;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.text-editor-1 {
+  clear: both;
+  z-index: 6;
+  margin-top: 44px;
+}
+
+.text-editor-2 {
+  z-index: 7;
+  margin: 42px 0 0 5px;
+}
+
+.text-editor-3 {
+  clear: both;
+  z-index: 10;
+  margin-top: 26px;
+}
+
+.text-editor-4 {
+  z-index: 11;
+  margin: 24px 0 0 5px;
+}

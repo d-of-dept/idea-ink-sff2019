@@ -1,0 +1,101 @@
+extends layout
+block css
+  link(rel='stylesheet' href='/css/editor.css')
+block content
+  form#createForm.editor.clearfix
+    h2.page-title Create Item
+    input#editTitle.title(name='title' placeholder='Session Title' type='text')
+    input#editType.type(name='type' placeholder='Session Type (e.g. Opening Talk, Tech Talk, etc.)' type='text')
+    select#editTrack.track(name='track')
+      option(value='Select Track / Segment') Select Track / Segment
+      option(value='Festival Stage') Festival Stage
+      option(value='Sustainability, Finance and Tech') Sustainability, Finance and Tech
+      option(value='Future of Finance') Future of Finance
+      option(value='Investment and Global Market Opportunities') Investment and Global Market Opportunities
+      option(value='Exponential Technologies') Exponential Technologies
+      option(value='Coral Triangle') Coral Triangle
+      option(value='Global Access to Innovation') Global Access to Innovation
+      option(value='Future Directions with IEEE') Future Directions with IEEE
+      option(value='Unravelling Healthcare Innovation') Unravelling Healthcare Innovation
+      option(value='Sustaining the Future of Humanity') Sustaining the Future of Humanity
+      option(value='Deep Tech – Powering Cities of the Future') Deep Tech &ndash;&nbsp;Powering Cities of the Future
+      option(value='Future of Finance') Future of Finance
+    select#editDay.day(name='day')
+      option(value='Select Day') Select Day
+      option(value='Day 1') Day 1
+      option(value='Day 2') Day 2
+      option(value='Day 3') Day 3
+    p.text-editor.text-editor-1 Start Time
+    select#editStartHH.start-hh(name='start_hh')
+      option(value='HH') HH
+      option(value='07') 07
+      option(value='08') 08
+      option(value='09') 09
+      option(value='10') 10
+      option(value='11') 11
+      option(value='12') 12
+      option(value='13') 13
+      option(value='14') 14
+      option(value='15') 15
+      option(value='16') 16
+      option(value='17') 17
+      option(value='18') 18
+      option(value='19') 19
+      option(value='20') 20
+    p.text-editor.text-editor-2 :
+    select#editStartMM.start-mm(name='start_mm')
+      option(value='MM') MM
+      option(value='00') 00
+      option(value='05') 05
+      option(value='10') 10
+      option(value='15') 15
+      option(value='20') 20
+      option(value='25') 25
+      option(value='30') 30
+      option(value='35') 35
+      option(value='40') 40
+      option(value='45') 45
+      option(value='50') 50
+      option(value='55') 55
+    p.text-editor.text-editor-3 End &nbsp;Time
+    select#editEndHH.end-hh(name='end_hh')
+      option(value='HH') HH
+      option(value='07') 07
+      option(value='08') 08
+      option(value='09') 09
+      option(value='10') 10
+      option(value='11') 11
+      option(value='12') 12
+      option(value='13') 13
+      option(value='14') 14
+      option(value='15') 15
+      option(value='16') 16
+      option(value='17') 17
+      option(value='18') 18
+      option(value='19') 19
+      option(value='20') 20
+    p.text-editor.text-editor-4 :
+    select#editEndMM.end-mm(name='end_mm')
+      option(value='MM') MM
+      option(value='00') 00
+      option(value='05') 05
+      option(value='10') 10
+      option(value='15') 15
+      option(value='20') 20
+      option(value='25') 25
+      option(value='30') 30
+      option(value='35') 35
+      option(value='40') 40
+      option(value='45') 45
+      option(value='50') 50
+      option(value='55') 55
+    #imageUpload.image-upload
+      input#uploadInput.hidden(name="source_image" type="file")
+      img#uploadImage.image(src='/images/icon_image.svg')
+    input#editSpeakers.speakers(name='speaker' placeholder='Speaker (Seperate multiple speakers with commas)' type='text')
+    input#editOrgs.orgs(name='organisation' placeholder='Organization (Seperate multiple orgs with commas)' type='text')
+    .buttons.clearfix
+      button#btnCancel.cancel(onclick="window.location='/admin/sff2019';" type='button') Cancel
+      button#btnSave.save(type='submit') Save  
+block scripts
+  script(src='/js/item_create.js')

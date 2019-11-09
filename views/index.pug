@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 #{contentHead}
+  ul
+    each event, i in events
+      li
+        div
+          h1= event.name
+          p= event.body
+          
