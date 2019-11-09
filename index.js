@@ -66,6 +66,9 @@ function getItems(){
     })
     return days;
   })
+  .catch(error => {
+    console.log(error);
+  })
 }
 
 // Load View Engine
