@@ -4,7 +4,8 @@ block css
 block content
   form#createForm.editor.clearfix
     h2.page-title Edit Item
-    span#itemId.hidden #{id}
+    span#itemId.hidden-none #{id}
+    span#srcUrl.hidden-none #{sourceurl}
     input#editTitle.title(name='title' placeholder='Session Title' type='text' value=itemtitle)
     input#editType.type(name='type' placeholder='Session Type (e.g. Opening Talk, Tech Talk, etc.)' type='text' value=type)
     select#editTrack.track(name='track')

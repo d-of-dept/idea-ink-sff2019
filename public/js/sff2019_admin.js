@@ -4,7 +4,14 @@ const eventRef = db.collection('events');
 const itemRef = eventRef.doc('mGyW6ogPmyoV8CARcYka').collection('items');
 
 auth.onAuthStateChanged((user)=>{
-  if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+  if(user)
+  {
+    if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+    {
+      window.location.href= "/admin";
+    }
+  }
+  else
   {
     window.location.href= "/admin";
   }

@@ -4,6 +4,7 @@ const db = firebase.firestore();
 const storage = firebase.storage();
 const eventRef = db.collection('events');
 const id = document.getElementById('itemId').innerHTML;
+const srcUrl = document.getElementById('srcUrl').innerHTML;
 const itemRef = eventRef.doc('mGyW6ogPmyoV8CARcYka').collection('items').doc(id);
 
 let imageLoaded = false;
@@ -47,8 +48,8 @@ createForm.addEventListener('submit', (e)=>{
             speaker: createForm['speaker'].value,
             organisation: createForm['organisation'].value,
           }).then(function(docRef){
-            alert("updated item to SFF2019 with image");
             window.location.href = "/admin/sff2019";
+            alert("updated item to SFF2019 with image");
           })
         })
       }
@@ -64,12 +65,12 @@ createForm.addEventListener('submit', (e)=>{
       starttime: st,
       endtime: et,
       timeslot: timeSlot,
-      sourceurl: document.getElementById('#uploadImage').src,
+      sourceurl: srcUrl,
       speaker: createForm['speaker'].value,
       organisation: createForm['organisation'].value,
     }).then(function(docRef){
-      alert("updated item to SFF2019 without image");
       window.location.href = "/admin/sff2019";
+      alert("updated item to SFF2019 without image");
     })
   }
 
@@ -98,9 +99,16 @@ function readURL(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
-
+//Redirect to admin page if not logged in
 auth.onAuthStateChanged((user)=>{
-  if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+  if(user)
+  {
+    if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+    {
+      window.location.href= "/admin";
+    }
+  }
+  else
   {
     window.location.href= "/admin";
   }

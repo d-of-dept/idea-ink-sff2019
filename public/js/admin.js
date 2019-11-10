@@ -23,15 +23,13 @@ adminForm.addEventListener('submit', (e)=>{
 })
 
 auth.onAuthStateChanged((user)=>{
-  if(user.uid === "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+  if(user)
   {
-    adminForm.style.display = "none";
-    window.location.href= "/admin/sff2019";
-  }
-  else
-  {
-    //adminForm.style.display = "block";
-    //newItemForm.style.display = "none";
+    if(user.uid === "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+    {
+      adminForm.style.display = "none";
+      window.location.href= "/admin/sff2019";
+    }
   }
   console.log(user);
 })

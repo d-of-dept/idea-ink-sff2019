@@ -100,8 +100,16 @@ function readURL(input) {
   }
 }
 
+//Redirect to admin page if not logged in
 auth.onAuthStateChanged((user)=>{
-  if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+  if(user)
+  {
+    if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+    {
+      window.location.href= "/admin";
+    }
+  }
+  else
   {
     window.location.href= "/admin";
   }
