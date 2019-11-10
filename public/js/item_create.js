@@ -114,3 +114,7 @@ auth.onAuthStateChanged((user)=>{
     window.location.href= "/admin";
   }
 })
+
+document.getElementById('uploadImage').addEventListener('click', () => {
+  document.getElementById('uploadInput').click()
+});

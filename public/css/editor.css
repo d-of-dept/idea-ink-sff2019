@@ -160,6 +160,21 @@ body {
   overflow: hidden;
 }
 
+.image-edit {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 18;
+  width : 95% !important;
+  height: auto;
+  margin: auto;
+  opacity: 1 !important;
+  overflow: hidden;
+}
+
 .image-upload {
   position: relative;
   float: left;
