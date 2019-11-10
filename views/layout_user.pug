@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1.0')
+    link(rel='icon', href='/favicon.ico')
+    title #{title}
+    link(rel='stylesheet' href='/css/standardize.css')
+    block css
+  body.body.clearfix(ontouchstart='')
+    block content
+    #footer.footer.clearfix
+      p.footer-divider
+      .socials.clearfix
+        img#linkedIn.social-icon(src='/images/icon_social-linkedin.svg' onclick="window.open('https://www.linkedin.com/company/idea-ink-illustrations/', '_blank');")
+        img#twitter.social-icon.social-icon-2(src='/images/icon_social-twitter.svg' onclick="window.open('https://twitter.com/_ideaink', '_blank');")
+        img#facebook.social-icon.social-icon-3(src='/images/icon_social-fb.svg' onclick="window.open('https://www.facebook.com/IdeaInkIllustrations/', '_blank');")
+        img#instagram.social-icon.social-icon-4(src='/images/icon_social-insta.svg' onclick="window.open('https://www.instagram.com/_ideaink/', '_blank');")
+      p.copyright &copy;2019 Idea Ink Illustrations
+    script(src='/js/script.js')
+    script(src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js")
+    script(src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js")
+    script(src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js")
+    script(src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js")
+    script(src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js")
+    script(src="/js/init.js")
+    block scripts
+    

@@ -170,6 +170,7 @@ body {
   z-index: 18;
   width : 95% !important;
   height: auto;
+  max-height: 95%;
   margin: auto;
   opacity: 1 !important;
   overflow: hidden;

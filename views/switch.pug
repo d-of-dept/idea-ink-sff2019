@@ -1,0 +1,19 @@
+extends layout_user
+block css
+  link(rel='stylesheet' href='/css/switch.css')
+block content
+  #headerTrackSwitch.header-track-switch.clearfix
+    h5.subheading SWITCH 2019
+    h2#trackTitle.track-title #{subtitle}
+  #trackList.track-list.clearfix
+    if items != undefined
+      each item in items
+        .list-item.clearfix(onclick='itemSelect("'+ item.id +'")')
+          p.list-timing
+            span#startTime= item.st
+            |  &ndash; 
+            span#endTime= item.et
+          p.list-title= item.title
+          img.list-chevron(src='/images/icon_chevron.svg')
+block scripts
+  script(src='/js/track.js')

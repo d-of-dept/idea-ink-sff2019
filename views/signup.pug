@@ -1,0 +1,26 @@
+extends layout_user
+block css
+  link(rel='stylesheet' href='/css/signup.css')
+block content
+  .header-signup.clearfix
+    h5.subheading Idea Ink Account
+    img.image(src='images/logo.png' onclick="window.open('https://www.ideaink.co/contact-us', '_blank')")
+    h1.page-title Sign Up
+  p.copy
+    | Create an account with Idea Ink to gain access to Graphic Recording downloads for all the events we attend!
+  form#signupForm.signup.clearfix
+    h3.headers Log In Information
+    input#email.email(name='email' placeholder='Email Address' type='email' required)
+    input#password.password(name='password' placeholder='Password' type='password' required)
+    input#passwordConfirm.password-confirm(name='password_confirm' placeholder='Confirm Password' type='password' required)
+    h3.headers.headers-2 Personal Information
+    input#firstName.first-name(name='first_name' placeholder='First Name' type='text' required)
+    input#lastName.last-name(name='last_name' placeholder='Last Name' type='text' required)
+    input#org.org(name='organisation' placeholder='Organisation' type='text' required)
+    input#designation.designation(name='designation' placeholder='Designation / Job Title' type='text' required)
+    button._button(type='submit') Sign Up
+  p.disclaimer
+    span All fields are required.
+    |  Idea Ink will not provide your personal information to any third party individual, government agency, or company at any time. The provided email will only be used to contact you regarding your account or, if you explicitly request to be contacted by us.
+block scripts
+  script(src='/js/signup.js')

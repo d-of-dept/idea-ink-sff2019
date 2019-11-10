@@ -1,0 +1,48 @@
+extends layout_user
+block css
+  link(rel='stylesheet' href='/css/sff.css')
+block content
+  #headerTrackSFF.header-track-sff.clearfix
+    h5.subheading Singapore Fintech Festival 2019
+    h2#trackTitle.track-title Investment and Global Market Opportunities
+  .day-nav.clearfix
+    #indicator.day-indicator.clearfix
+      .indicator-sprite
+    p#day1.day-tab-selected Day 1
+    .day-nav-spacer
+    p#day2.day-tab Day 2
+    .day-nav-spacer
+    p#day3.day-tab Day 3
+  #day1Wrapper.track-list.clearfix
+    if day1 != undefined
+      each item in day1
+        .list-item.clearfix(onclick='itemSelect("'+ item.id +'")')
+          p.list-timing
+            span= item.st
+            |  &ndash; 
+            span= item.et
+          p.list-title= item.title
+          img.list-chevron(src='/images/icon_chevron.svg')
+  #day2Wrapper.track-list.clearfix
+    if day2 != undefined
+      each item in day2
+        .list-item.clearfix(onclick='itemSelect("'+ item.id +'")')
+          p.list-timing
+            span= item.st
+            |  &ndash; 
+            span= item.et
+          p.list-title= item.title
+          img.list-chevron(src='/images/icon_chevron.svg')
+  #day3Wrapper.track-list.clearfix
+    if day3 != undefined
+      each item in day3
+        .list-item.clearfix(onclick='itemSelect("'+ item.id +'")')
+          p.list-timing
+            span= item.st
+            |  &ndash; 
+            span= item.et
+          p.list-title= item.title
+          img.list-chevron(src='/images/icon_chevron.svg')
+block scripts
+  script(src='/js/track.js')
+  script(src='/js/sff.js')

@@ -94,8 +94,8 @@ function readURL(input) {
     reader.onload = function(e) {
       uploadimage = document.getElementById('#uploadImage');
       uploadImage.src = e.target.result;
-      uploadImage.style.width = '95%';
-      uploadImage.style.opacity = 1;
+      uploadImage.classList.remove('image');
+      uploadImage.classList.add('image-edit');
       imageLoaded = true;
     }
 
