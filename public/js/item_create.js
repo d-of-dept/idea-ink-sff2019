@@ -25,6 +25,7 @@ createForm.addEventListener('submit', (e)=>{
       timeSlot = new Date('November 13, 2019 '+ st[0] + ':' + st[1] + ':00');
     break;
   }
+  today = new Date();
   if(imageLoaded)
   {
     file = createForm['source_image'].files[0];
@@ -45,10 +46,11 @@ createForm.addEventListener('submit', (e)=>{
             sourceurl: url,
             speaker: createForm['speaker'].value,
             organisation: createForm['organisation'].value,
+            lastupdate: today
           }).then(function(docRef){
-            console.log(docRef.id);
-            alert("uploaded item to SFF2019 with image");
             window.location.href = "/admin/sff2019";
+            alert("uploaded item to SFF2019 with image");
+
           })
         })
       }
@@ -67,10 +69,11 @@ createForm.addEventListener('submit', (e)=>{
       sourceurl: "",
       speaker: createForm['speaker'].value,
       organisation: createForm['organisation'].value,
+      lastupdate: today
     }).then(function(docRef){
       console.log(docRef.id);
-      alert("uploaded item to SFF2019 without image");
       window.location.href = "/admin/sff2019";
+      alert("uploaded item to SFF2019 without image");
     })
   }
 
@@ -91,7 +94,7 @@ function readURL(input) {
     reader.onload = function(e) {
       uploadimage = document.getElementById('#uploadImage');
       uploadImage.src = e.target.result;
-      uploadImage.style.width = '100%';
+      uploadImage.style.width = '95%';
       uploadImage.style.opacity = 1;
       imageLoaded = true;
     }

@@ -27,6 +27,7 @@ createForm.addEventListener('submit', (e)=>{
       timeSlot = new Date('November 13, 2019 '+ st[0] + ':' + st[1] + ':00');
     break;
   }
+  today = new Date();
   if(imageLoaded)
   {
     file = createForm['source_image'].files[0];
@@ -47,6 +48,7 @@ createForm.addEventListener('submit', (e)=>{
             sourceurl: url,
             speaker: createForm['speaker'].value,
             organisation: createForm['organisation'].value,
+            lastupdate: today
           }).then(function(docRef){
             window.location.href = "/admin/sff2019";
             alert("updated item to SFF2019 with image");
@@ -68,6 +70,7 @@ createForm.addEventListener('submit', (e)=>{
       sourceurl: srcUrl,
       speaker: createForm['speaker'].value,
       organisation: createForm['organisation'].value,
+      lastupdate: today
     }).then(function(docRef){
       window.location.href = "/admin/sff2019";
       alert("updated item to SFF2019 without image");
