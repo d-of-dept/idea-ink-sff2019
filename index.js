@@ -40,9 +40,9 @@ function getItems(){
   const itemsRef = db.collection('events').doc('mGyW6ogPmyoV8CARcYka').collection('items').orderBy('timeslot','asc');
   return itemsRef.get().then(snapshot => {
     let days = {};
-    let day1 = new Array();
-    let day2 = new Array();
-    let day3 = new Array();
+    let day1 = [];
+    let day2 = [];
+    let day3 = [];
     snapshot.docs.forEach(doc =>{
       data = doc.data();
       data.id = doc.id;

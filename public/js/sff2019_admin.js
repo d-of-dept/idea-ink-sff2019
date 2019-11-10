@@ -8,7 +8,6 @@ auth.onAuthStateChanged((user)=>{
   {
     window.location.href= "/admin";
   }
-  console.log(user);
 })
 
 let day1Wrapper = document.getElementById("day1Wrapper");
@@ -55,6 +54,7 @@ function itemEdit(id){
 }
 function itemDelete(id){
   itemRef.doc(id).delete().then(e => {
-    alert("successfully deleted item")
+    document.getElementById(id).style.display = "none";
+    alert("successfully deleted item");
   })
 }

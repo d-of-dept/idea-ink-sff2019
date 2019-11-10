@@ -98,3 +98,10 @@ function readURL(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
+
+auth.onAuthStateChanged((user)=>{
+  if(user.uid != "lmw7DhqqEjOJalJeia8CSDkrYGI3")
+  {
+    window.location.href= "/admin";
+  }
+})
