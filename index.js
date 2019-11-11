@@ -179,6 +179,7 @@ app.get('/sff/:track',function(req,res){
   getTrackItemsDays(track).then(days =>{
     res.render('sff',{
       title: 'SFF2019 |' + track,
+      subtitle: track,
       day1: days.day1,
       day2: days.day2,
       day3: days.day3,

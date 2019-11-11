@@ -22,7 +22,7 @@ coral = document.getElementById("coral");
 globalAccess.onclick = function(){goToTrack("switch","Global Access to Innovation")};
 ieee.onclick = function(){goToTrack("switch","Future Directions with IEEE")};
 unravelling.onclick = function(){goToTrack("switch","Unravelling Healthcare Innovation")};
-sustainingFuture.onclick = function(){goToTrack("switch","Unravelling Healthcare Innovation")};
+sustainingFuture.onclick = function(){goToTrack("switch","Sustaining the Future of Humanity")};
 poweringCities.onclick = function(){goToTrack("switch","Powering Cities of the Future")};
 festival.onclick = function(){goToTrack("sff","Plenary Stage")};
 sustainability.onclick = function(){goToTrack("sff","Sustainability, Finance and Tech")};
@@ -32,9 +32,9 @@ exponential.onclick = function(){goToTrack("sff","Exponential Technologies")};
 coral.onclick = function(){goToTrack("sff","Coral Triangle")};
 
 function goToTrack(evt,track){
-  track = track.split(" ").join("_");
-  console.log(track);
-  window.location.href = "/"+evt+"/"+track;
+  let newtrack = track.split(" ").join("_");
+  console.log(newtrack);
+  window.location.href = "/"+evt+"/"+newtrack;
 }
 
 // Frontend
