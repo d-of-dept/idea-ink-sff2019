@@ -320,6 +320,7 @@ body {
 .recent-tile {
   position: relative;
   float: left;
+  margin-right: 14px;
   width: 300px;
   height: 180px;
   border: 1px solid rgb(240, 240, 240);
@@ -362,6 +363,7 @@ body {
   scroll-padding-left: 24px;
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
+  overflow-y: hidden;
 }
 
 .recent-wrapper::-webkit-scrollbar {

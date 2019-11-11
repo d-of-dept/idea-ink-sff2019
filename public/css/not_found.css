@@ -25,20 +25,58 @@ src: url("../fonts/FuturaLT-Bold.ttf") format("truetype")
 
 body {
   background-color: rgb(255, 255, 255);
-  font: normal 1em/1.2 ProximaNova-Regular;
-  color: rgb(95, 95, 95);
+  font: normal 0.938em/1.4 ProximaNova-Regular;
+  color: rgb(57, 58, 63);
   
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
 
+.back {
+  display: block;
+  width: 150px;
+  height: 38px;
+  margin: 20px auto 0;
+  border-radius: 50px;
+  background-color: #f0f0f0;
+  font: 0.933em/1 FuturaLT-Bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(57, 58, 63);
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+.back:active {
+  background-color: rgb(57, 58, 63);
+  color: rgb(240, 240, 240);
+  -webkit-transform: scale(.95);
+  -moz-transform: scale(.95);
+  -o-transform: scale(.95);
+  -ms-transform: scale(.95);
+  transform: scale(.95);
+}
+
 .copy {
-  width: 280px;
+  width: 290px;
   margin: 25px auto 0;
   font-size: 1em;
   text-align: center;
-  color: rgb(95, 95, 95);
+  color: rgb(57, 58, 63);
+}
+
+.copy-sub {
+  width: 280px;
+  margin: 25px auto 0;
+  font-size: .9em;
+  font-style: oblique;
+  text-align: justify;
+  color: rgba(170, 170, 170, 1);
 }
 
 .image {
@@ -53,13 +91,14 @@ body {
   display: block;
   width: 150px;
   height: 38px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 40px auto 0;
   border-radius: 50px;
-  font-family: FuturaLT-Bold;
-  font-size: 0.875em;
+  background-color: rgb(255, 200, 0);
+  font: 0.933em/2.7 FuturaLT-Bold;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: rgb(57, 58, 63);
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
   -o-transition: all .2s;
@@ -80,23 +119,7 @@ body {
 .title {
   width: 280px;
   margin: 45px auto 0;
-  font: 1.625em/1.05 ProximaNova-Bold;
-  text-align: center;
-  color: rgb(57, 58, 63);
-}
-
-.preview-1 {
-  margin-top: 50px;
-  background-color: rgb(255, 200, 0);
-  line-height: 2.7;
-  text-align: center;
-  color: rgb(57, 58, 63);
-}
-
-.preview-2 {
-  margin-top: 24px;
-  background-color: #f0f0f0;
-  line-height: 1;
+  font: 1.733em/1.05 ProximaNova-Bold;
   text-align: center;
   color: rgb(57, 58, 63);
 }
