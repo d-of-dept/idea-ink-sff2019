@@ -37,7 +37,7 @@ body {
   background-color: #ffffff;
   font: normal 0.938em/1.2 ProximaNova-Regular;
   color: rgb(95, 95, 95);
-  
+
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -175,6 +175,7 @@ body {
   margin-top: 20px;
   font-size: 0.933em;
   color: rgb(95, 95, 95);
+  cursor: pointer;
 }
 
 .header-group {
