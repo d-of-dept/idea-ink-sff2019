@@ -37,7 +37,7 @@ body {
   background-color: #ffffff;
   font: normal 0.813em/1.1 ProximaNova-Bold;
   color: rgb(57, 58, 63);
-  
+
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -267,7 +267,7 @@ body {
 
 .recent-collection {
   float: left;
-  width: 1604px;
+  width: 1620px;
   min-width: 400px;
   height: 200px;
   padding-right: 24px;
