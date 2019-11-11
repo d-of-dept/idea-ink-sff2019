@@ -25,15 +25,19 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname,'public')));
 
 function getLatestItems(){
-  const itemsRef = db.collection('events').doc('mGyW6ogPmyoV8CARcYka').collection('items').orderBy('lastupdate','desc').limit(5);
+  const itemsRef = db.collection('events').doc('mGyW6ogPmyoV8CARcYka').collection('items').orderBy('lastupdate','desc');
   return itemsRef.get().then(snapshot => {
     let items = new Array();
+    let maxLength = 5;
     snapshot.docs.forEach(doc =>{
       data = doc.data();
       if(data.sourceurl != "")
       {
-        data.id = doc.id;
-        items.push(data);
+        if(items.length < maxLength)
+        {
+          data.id = doc.id;
+          items.push(data);
+        }
       }
     });
     return items;
