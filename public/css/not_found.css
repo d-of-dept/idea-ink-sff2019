@@ -37,7 +37,7 @@ body {
   display: block;
   width: 150px;
   height: 38px;
-  margin: 20px auto 0;
+  margin: 20px auto 30px;
   border-radius: 50px;
   background-color: #f0f0f0;
   font: 0.933em/1 FuturaLT-Bold;
@@ -81,9 +81,9 @@ body {
 
 .image {
   display: block;
-  width: 230px;
+  width: 200px;
   height: auto;
-  margin: 50px auto 0;
+  margin: 45px auto 0;
   overflow: hidden;
 }
 
