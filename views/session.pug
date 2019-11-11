@@ -7,7 +7,7 @@ block content
     .header-group.clearfix
       h3#itemTitle.item-title= data.title
       img#download.download(src='/images/icon_download.svg' onclick='checkLogin()')
-    p#trackName.header-caption= data.track
+    p#trackName.header-caption(onclick='window.history.back();')= data.track
   img#graphicRecording.graphic-recording(src= data.sourceurl)
   #loginModal.login-modal
     #loginBox.login-box.clearfix

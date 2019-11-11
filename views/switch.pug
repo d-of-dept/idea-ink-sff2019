@@ -3,7 +3,7 @@ block css
   link(rel='stylesheet' href='/css/switch.css')
 block content
   #headerTrackSwitch.header-track-switch.clearfix
-    h5.subheading SWITCH 2019
+    h5.subheading(onclick='window.history.back();') SWITCH 2019
     h2#trackTitle.track-title #{subtitle}
   #trackList.track-list.clearfix
     if items != undefined
