@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Idea Ink | User Report</title>
+  </head>
+  <body>
+    <button style="width:30%; margin: 30px;">Export HTML table to CSV file</button>
+    <form style="width:30%; margin: 30px;">
+    <input id="days" type="number" name="days" min="1" max="30">
+    <input type="button" value="Generate" onclick="findYesterday()"/>
+    </form>
+    <table style="width:100%" >
+    <thead>
+      <tr>
+      <th>email</th>
+      <th>firstName</th>
+      <th>lastName</th>
+      <th>organisation</th>
+      <th>designation</th>
+      </tr>
+    </thead>
+    <tbody id="table">
+
+    </tbody>
+  </table>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+  <script src="/js/init.js"></script>
+
+  <script>
+    var table = document.getElementById("table");
+    const usersRef = firebase.firestore().collection('users');
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      getUsers();
+    });
+
+    function getUsers()
+    {
+      return usersRef.get().then(snapshot => {
+        snapshot.docs.forEach(doc =>{
+          data = doc.data();
+          addRow("table",data.email,data.firstname,data.lastname,data.organisation,data.designation);
+        })
+      })
+    }
+
+
+    function addRow(tableID,email,firstName,lastName,organisation,designation) {
+      // Get a reference to the table
+      let tableRef = document.getElementById(tableID);
+
+      // Insert a row at the end of the table
+      let newRow = tableRef.insertRow(-1);
+
+      // Insert a cell in the row at index 0
+      let newCell1 = newRow.insertCell(0);
+      let newCell2 = newRow.insertCell(1);
+      let newCell3 = newRow.insertCell(2);
+      let newCell4 = newRow.insertCell(3);
+      let newCell5 = newRow.insertCell(4);
+
+      // Append a text node to the cell
+      let newText1 = document.createTextNode(email);
+      let newText2 = document.createTextNode(firstName);
+      let newText3 = document.createTextNode(lastName);
+      let newText4 = document.createTextNode(organisation);
+      let newText5 = document.createTextNode(designation);
+      newCell1.appendChild(newText1);
+      newCell2.appendChild(newText2);
+      newCell3.appendChild(newText3);
+      newCell4.appendChild(newText4);
+      newCell5.appendChild(newText5);
+    }
+
+
+    function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV FILE
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // We have to create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Make sure that the link is not displayed
+    downloadLink.style.display = "none";
+
+    // Add the link to your DOM
+    document.body.appendChild(downloadLink);
+
+    // Lanzamos
+    downloadLink.click();
+  }
+
+  function export_table_to_csv(html, filename) {
+  	var csv = [];
+  	var rows = document.querySelectorAll("table tr");
+
+      for (var i = 0; i < rows.length; i++) {
+  		var row = [], cols = rows[i].querySelectorAll("td, th");
+
+          for (var j = 0; j < cols.length; j++)
+              row.push(cols[j].innerText);
+
+  		csv.push(row.join(","));
+  	}
+
+      // Download CSV
+      download_csv(csv.join("\n"), filename);
+  }
+
+  document.querySelector("button").addEventListener("click", function () {
+      var html = document.querySelector("table").outerHTML;
+  	export_table_to_csv(html, "table.csv");
+  });
+  </script>
+  </body>
+</html>
