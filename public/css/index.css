@@ -61,12 +61,23 @@ body {
   background-color: #ecb32b;
 }
 
+.list-powered {
+  float: left;
+  width: 100%;
+  font: 1em/2.4 ProximaNova-Regular;
+  color: rgb(100, 100, 100);
+}
+
+.list-item-powered {
+  padding-left: 24px;
+}
+
 .browse-2019 {
   position: relative;
   float: left;
   z-index: 95;
   width: 100%;
-  height: 1045px;
+  height: auto;
 }
 
 .browse-db {
